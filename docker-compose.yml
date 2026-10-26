@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  questdb: 
+    image: questdb/questdb:latest 
+    container_name: datascience_finance 
+    ports:
+      - "9000:9000"
+      - "8812:8812"
+      - "9009:9009"
+    volumes:
+      - questdb_data:/var/lib/questdb
+    restart: unless-stopped
+
+volumes:
+  questdb_data:
+
+
